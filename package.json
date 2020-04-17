@@ -1,0 +1,31 @@
+{
+  "name": "anti-robot",
+  "version": "1.0.0",
+  "description": "Anti robot js",
+  "main": "./build/anti-robot.min.js",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^6.6.0",
+    "tslint": "^5.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.5.3",
+    "uglify-js": "^3.6.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [
+    "anti-robot",
+    "detect-robot"
+  ],
+  "author": "Rio Kwok",
+  "license": "MIT"
+}
