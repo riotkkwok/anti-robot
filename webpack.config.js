@@ -1,5 +1,5 @@
 var path = require('path');
-var webpack = require('webpack')
+var webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -10,6 +10,7 @@ module.exports = {
     output: {
         path: __dirname,
         filename: "build/[name].js",
+        library: 'AntiRobot',
         libraryTarget: 'umd'
     },
     module: {

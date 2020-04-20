@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta content="telephone=no" name="format-detection" />
+  <meta content="email=no" name="format-detection" />
+  <title>Anit Robot Demo</title>
+  <style>
+    .area {
+      line-height: 30px;
+      border: 1px solid #aaaaaa;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="area">
+    <button id="queryBtn">查询</button>
+  </div>
+  <div class="area">
+    <button id="retryBtn">重试</button>
+  </div>
+  <script type="text/javascript" src="../build/anti-robot.min.js"></script>
+  <script>
+    AntiRobot.detectRobot(function(code, info) {
+      console.log(code, info);
+    });
+  </script>
+</body>
+</html>
