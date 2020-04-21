@@ -28,6 +28,12 @@
     AntiRobot.detectRobot(function(code, info) {
       console.log(code, info);
     });
+    document.querySelector('#queryBtn').addEventListener('click', function(e) {
+      console.log('#queryBtn - click');
+    }, false);
+    document.querySelector('#retryBtn').addEventListener('click', function(e) {
+      console.log('#retryBtn - click');
+    }, false);
   </script>
 </body>
 </html>
