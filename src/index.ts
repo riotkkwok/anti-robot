@@ -89,6 +89,8 @@ const lastEvents = {
   mousemove: 0
 };
 
+let isSetDeviceEventListener = false;
+
 export function detectRobot (handler: IHandler, signOpts?: any, threshold?: number) {
   if (!handler || typeof handler !== 'function') {
     throw new Error(ErrorPrefix + 'The type of argument \'handler\' is invalid.');
@@ -104,7 +106,10 @@ export function detectRobot (handler: IHandler, signOpts?: any, threshold?: numb
     robotHandler(Reasons.UA_KEYWORD);
     return;
   }
-  setDeviceEventListener();
+  if (!isSetDeviceEventListener) {
+    setDeviceEventListener();
+    isSetDeviceEventListener = true;
+  }
 }
 
 function genSignature (signOpts?: any): ISignature {
