@@ -34,9 +34,9 @@ AntiRobot.detectRobot((code, info) => {
 });
 ```
 
-### APIs
+## Documentation
 
-#### detectRobot()
+### detectRobot()
 
 Turn on robot-like behaviour detection. 
 
@@ -54,7 +54,7 @@ AntiRobot.detectRobot(handler [, signOpts, threshold]);
 
 *threshold* [optional] - The time interval of the last five click events, also the time interval between the last mouse move event and the last click event during the robot-like behaviour evaluation. Default is 10000ms. The unit is millisecond.
 
-#### checkSignature()
+### checkSignature()
 
 Check current signature is the same as the original or not.
 
@@ -72,7 +72,7 @@ AntiRobot.detectRobot([signOpts]);
 
 result - boolean, true is the same, otherwise false.
 
-#### reset()
+### reset()
 
 reset the signature, handler and threshold.
 
