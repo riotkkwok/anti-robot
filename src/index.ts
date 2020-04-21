@@ -50,7 +50,7 @@ class ClickTypeStack {
       type,
       time: Date.now()
     };
-    this.list.unshift(info);
+    this.list.push(info);
   }
   public shiftOut = function () {
     this.list.shift();
