@@ -117,9 +117,9 @@ function genSignature (signOpts?: any): ISignature {
   sign.pageUrl = window.location.href;
   sign.referrer = document.referrer;
   if (window.performance && window.performance?.now() > 0) {
-    sign.pageTime = Date.now() - Math.floor(window.performance.now());
+    sign.pageTime = Math.floor((Date.now() - window.performance.now()) / 1000);
   } else {
-    sign.pageTime = Date.now();
+    sign.pageTime = Math.floor(Date.now() / 1000);
   }
   sign.historyLength = history.length;
   if (signOpts && typeof signOpts === 'object') {
@@ -158,10 +158,21 @@ export function checkSignature (signOpts?: any): boolean {
 }
 
 export function reset () {
+  duration = 10000;
   signature = genSignature();
   while (handlerList.length > 0) {
     handlerList.pop();
   }
+  while (clickTypeStack.size() > 0) {
+    clickTypeStack.shiftOut();
+  }
+  lastEvents.click = 0;
+  lastEvents.keydown = {
+    key: '',
+    time: 0
+  };
+  lastEvents.mousedown = 0;
+  lastEvents.mousemove = 0;
 }
 
 function checkUA (): boolean {
