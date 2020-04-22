@@ -34,6 +34,7 @@ AntiRobot.detectRobot((code, info) => {
 });
 ```
 
+
 ## Documentation
 
 ### detectRobot()
@@ -48,7 +49,7 @@ AntiRobot.detectRobot(handler [, signOpts, threshold]);
 
 **Parameters:**
 
-*handler* - Callback function which receive a notification (the reason code and the object with event target) when a robot-like behaviour is detected.
+*handler* - Callback function which receive a notification (the code and the object with event target) when a robot-like behaviour is detected. See [The robot handler](#The-robot-handler) for details on the callback itself.
 
 *signOpts* [optional] - An options object helps to generate the signature. Signature is to identify the page is reloaded / redirected or not.
 
@@ -61,7 +62,7 @@ Check current signature is the same as the original or not.
 **Syntax:**
 
 ```js
-AntiRobot.detectRobot([signOpts]);
+AntiRobot.checkSignature([signOpts]);
 ```
 
 **Parameters:**
@@ -81,6 +82,44 @@ reset the signature, handler and threshold.
 ```js
 AntiRobot.reset();
 ```
+
+
+## Usage notes
+
+### The robot handler
+
+**Syntax:**
+
+```js
+function robotHandler(code, info) {
+  switch (code) {
+    case 1: {
+      // handle robot UA
+      break;
+    }
+    case 2: {
+      // handle click without mouse movement 
+      break;
+    }
+    case 3: {
+      // handle fake click
+      break;
+    }
+  }
+}
+```
+
+**Parameters:**
+
+*code* - The code presents the rule of the robot-like behaviour evaluation. 
+
+> 1 - user agent contains suspect robot keyword.
+> 
+> 2 - triggers click event without mouse movement in the latest short period.
+> 
+> 3 - triggers click event without local coordinates of the mouse pointer.
+
+*info* - An object based on `click` event description
 
 ## Compatibility
 

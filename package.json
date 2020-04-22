@@ -1,7 +1,7 @@
 {
   "name": "anti-robot",
   "version": "1.0.0",
-  "description": "Anti robot js",
+  "description": "A robot-like behaviour detection tool.",
   "main": "./build/anti-robot.min.js",
   "devDependencies": {
     "ts-loader": "^6.2.1",

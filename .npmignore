@@ -1,0 +1,12 @@
+node_modules/
+dist/
+src/
+demo/
+.DS_Store
+.history
+package-lock.json
+.gitignore
+.npmignore
+tsconfig.json
+tslint.json
+webpack.config.js
