@@ -27,7 +27,7 @@ Or, install via npm:
 Or, if you installed via npm:
 
 ```js
-import { AntiRobot } from 'anti-robot';
+import * as AntiRobot from 'anti-robot';
 
 AntiRobot.detectRobot((code, info) => {
   // some code to handle it
