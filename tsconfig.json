@@ -7,7 +7,9 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": false,
+    "declaration": true,
     "allowJs": true,
+    "outDir": "./build/",
     "lib": [
       "es6",
       "dom"
