@@ -2,8 +2,22 @@
   "name": "anti-robot",
   "version": "1.1.0",
   "description": "A robot-like behaviour detection tool.",
+  "author": "Rio Kwok",
+  "license": "MIT",
   "main": "./build/anti-robot.min.js",
   "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riotkkwok/anti-robot"
+  },
+  "keywords": [
+    "AntiRobot",
+    "anti-robot",
+    "detect-robot"
+  ],
   "devDependencies": {
     "ts-loader": "^6.2.1",
     "tslint": "^6.1.0",
@@ -12,15 +26,5 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
-  },
-  "scripts": {
-    "build": "webpack --config webpack.config.js"
-  },
-  "keywords": [
-    "AntiRobot",
-    "anti-robot",
-    "detect-robot"
-  ],
-  "author": "Rio Kwok",
-  "license": "MIT"
+  }
 }
